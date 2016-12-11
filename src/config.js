@@ -7,7 +7,7 @@ const tweet = encodeURIComponent('Web Learn: it\'s like YouTube Gaming, but for 
 let config = {
   app: {
     name: 'Web Learn',
-    url: document.location.origin,
+    url: 'https://freearhey.github.io/web-learn/',
     description: 'Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.',
     author: 'Arhey',
     logo: {
