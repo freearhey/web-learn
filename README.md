@@ -2,7 +2,7 @@
 
 Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.
 
-[![Web Learn](https://raw.githubusercontent.com/freearhey/web-learn/master/build/images/logo-share.png)](https://freearhey.github.io/web-learn/)
+[![Web Learn](https://raw.githubusercontent.com/freearhey/web-learn/master/build/images/weblearn-banner.png)](https://freearhey.github.io/web-learn/)
 
 ## Contributing
 If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/freearhey/web-learn/issues) or a [pull request](https://github.com/freearhey/web-learn/pulls).

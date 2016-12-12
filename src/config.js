@@ -13,7 +13,7 @@ let config = {
     logo: {
       normal: 'build/images/logo.svg',
       mini: 'build/images/logo-mini.svg',
-      share: 'build/images/logo-share.png'
+      share: 'build/images/weblearn-banner.png'
     },
     github: {
       username: 'freearhey',
