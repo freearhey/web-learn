@@ -113,7 +113,7 @@ export default {
       this.loading = true
 
       let params = {
-        q: '$q'.replace(/\$q/g, this.query),
+        q: '"$q"'.replace(/\$q/g, this.query),
         order: this.order,
         maxResults: this.limit,
         videoCategoryId: 27,
