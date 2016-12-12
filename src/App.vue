@@ -44,6 +44,7 @@ export default {
       return [
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:creator', content: '@'+this.app.twitter.username },
+        { name: 'twitter:site', content: '@'+this.app.twitter.username },
         { name: 'twitter:title', content: this.app.title },
         { name: 'twitter:description', content: this.app.description },
         { name: 'twitter:image', content: this.app.url + this.app.logo.share },
