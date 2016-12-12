@@ -60,8 +60,10 @@ export default {
 
 <style lang="sass" scoped>
 .player
-  max-width: 70vw
   margin: 0 auto
+  max-width: 100vw
+  @media screen and (min-width: 769px)
+    max-width: 64vw
   &__wrapper
     position: relative;
     padding-bottom: 56.25%;
