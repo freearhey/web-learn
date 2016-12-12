@@ -2,12 +2,14 @@ const env = (process.env.NODE_ENV === 'production') ? require('../.env.productio
       baseUri = 'https://www.googleapis.com/youtube/v3',
       apiKey = env.YOUTUBE_API_KEY
 
-const tweet = encodeURIComponent('Web Learn: it\'s like YouTube Gaming, but for Web Developers.')
+const title = 'Web Learn: it\'s like YouTube Gaming, but for Web Developers'
+const tweet = encodeURIComponent(title)
 
 let config = {
   app: {
     name: 'Web Learn',
     url: 'https://freearhey.github.io/web-learn/',
+    title: title,
     description: 'Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.',
     author: 'Arhey',
     logo: {

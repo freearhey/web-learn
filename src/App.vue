@@ -44,9 +44,17 @@ export default {
       return [
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:creator', content: '@'+this.app.twitter.username },
-        { name: 'twitter:title', content: this.app.name },
+        { name: 'twitter:title', content: this.app.title },
         { name: 'twitter:description', content: this.app.description },
-        { name: 'twitter:image', content: this.app.url +'/'+ this.app.logo.share },
+        { name: 'twitter:image', content: this.app.url + this.app.logo.share },
+        { property: 'og:url', content: this.app.url },
+        { property: 'og:type', content: 'site' },
+        { property: 'og:title', content: this.app.title },
+        { property: 'og:image', content: this.app.url + this.app.logo.share },
+        { property: 'og:image:type', content: 'image/png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:description', content: this.app.description },
       ]
     }
   }
