@@ -25,7 +25,8 @@ module.exports = {
       '~store': path.resolve(__dirname, 'src/store/'),
       '~topics': path.resolve(__dirname, 'src/topics/'),
       '~transformers': path.resolve(__dirname, 'src/transformers/'),
-      '~util': path.resolve(__dirname, 'src/util/')
+      '~util': path.resolve(__dirname, 'src/util/'),
+      '~widgets': path.resolve(__dirname, 'src/widgets/')
     }
   },
   module: {

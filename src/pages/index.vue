@@ -1,17 +1,18 @@
 <template lang="pug">
 main
-  recommended-videos
+  component(is="recommended-videos")
   hr
-  popular-videos
+  component(is="popular-videos")
 </template>
 
 <script>
-import PopularVideos from '~components/PopularVideos.vue'
-import RecommendedVideos from '~components/RecommendedVideos.vue'
 import config from '~config'
 
 export default {
-  components: { PopularVideos, RecommendedVideos },
+  components: {
+    'recommended-videos': require('~pages/videos/recommended.vue'),
+    'popular-videos': require('~pages/videos/popular.vue')
+  },
   head: {
     title() {
       return {

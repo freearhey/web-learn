@@ -34,21 +34,17 @@ main
 <script>
 import moment from 'moment'
 import numeral from 'numeral'
-import Player from '~components/Player.vue'
-import ChannelRecentVideos from '~components/ChannelRecentVideos.vue'
-import TopicRelatedVideos from '~components/TopicRelatedVideos.vue'
-import store from '~store'
-import config from '~config'
 import nl2br from 'nl2br'
 import linkifyjs from 'linkifyjs/html'
 import truncate from 'lodash.truncate'
+import Player from '~components/Player.vue'
+import ChannelRecentVideos from '~widgets/ChannelRecentVideos.vue'
+import TopicRelatedVideos from '~widgets/TopicRelatedVideos.vue'
+import store from '~store'
+import config from '~config'
 
 export default {
-  components: {
-    Player,
-    ChannelRecentVideos,
-    TopicRelatedVideos
-  },
+  components: { Player, ChannelRecentVideos, TopicRelatedVideos },
   data() {
     return {
       video: null,
