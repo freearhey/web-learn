@@ -17,7 +17,7 @@ transition(
 
 <script>
 import chunk from 'lodash.chunk'
-import Video from '../components/Video.vue'
+import Video from '~components/Video.vue'
 
 export default {
   components: {

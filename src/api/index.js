@@ -1,7 +1,7 @@
-import videos from './videos'
-import search from './search'
-import channels from './channels'
-import topics from './topics'
+import videos from '~api/videos'
+import search from '~api/search'
+import channels from '~api/channels'
+import topics from '~api/topics'
 
 export default {
   videos,

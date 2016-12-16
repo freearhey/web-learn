@@ -1,38 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import HomeView from './views/HomeView.vue'
-import VideoView from './views/VideoView.vue'
-import SearchView from './views/SearchView.vue'
-import TopicView from './views/TopicView.vue'
-import TopicsView from './views/TopicsView.vue'
-import TopicVideosView from './views/TopicVideosView.vue'
-import ChannelView from './views/ChannelView.vue'
-import ChannelVideosView from './views/ChannelVideosView.vue'
-import ChannelAboutView from './views/ChannelAboutView.vue'
-
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: HomeView, meta: { scrollTop: true } },
-  { path: '/topics', name: 'topics', component: TopicsView, meta: { scrollTop: true } },
+  { path: '/', component: require('~pages/index.vue'), meta: { scrollTop: true } },
+  { path: '/video/:id', name: 'video', component: require('~pages/videos/single.vue'), meta: { scrollTop: true } },
+  { path: '/search*', name: 'search', component: require('~pages/search.vue'), meta: { scrollTop: true } },
+  { path: '/topics', name: 'topics', component: require('~pages/topics/index.vue'), meta: { scrollTop: true } },
   {
     path: '/topic/:id',
     name: 'topic',
-    component: TopicView,
+    component: require('~pages/topics/single.vue'),
     meta: { scrollTop: true },
     redirect: { name: 'topic-popular-videos' },
     children: [
       {
         path: 'recent',
         name: 'topic-recent-videos',
-        component: TopicVideosView,
+        component: require('~pages/topics/videos.vue'),
         meta: { scrollTop: false, order: 'date' }
       },
       {
         path: 'popular',
         name: 'topic-popular-videos',
-        component: TopicVideosView,
+        component: require('~pages/topics/videos.vue'),
         meta: { scrollTop: false, order: 'viewCount' }
       }
     ]
@@ -40,26 +32,24 @@ const routes = [
   {
     path: '/channel/:id',
     name: 'channel',
-    component: ChannelView,
+    component: require('~pages/channels/single.vue'),
     meta: { scrollTop: true },
     redirect: { name: 'channel-recent-videos' },
     children: [
       {
         path: 'about',
         name: 'channel-about',
-        component: ChannelAboutView,
+        component: require('~pages/channels/about.vue'),
         meta: { scrollTop: false }
       },
       {
         path: 'uploads',
         name: 'channel-recent-videos',
-        component: ChannelVideosView,
+        component: require('~pages/channels/videos.vue'),
         meta: { scrollTop: false, order: 'date' }
       }
     ]
-  },
-  { path: '/video/:id', name: 'video', component: VideoView, meta: { scrollTop: true } },
-  { path: '/search*', name: 'search', component: SearchView, meta: { scrollTop: true } }
+  }
 ]
 
 const router = new VueRouter({

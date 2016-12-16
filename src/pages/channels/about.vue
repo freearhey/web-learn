@@ -13,7 +13,7 @@ section.section
 <script>
 import numeral from 'numeral'
 import moment from 'moment'
-import store from '../store'
+import store from '~store'
 
 export default {
   data() {

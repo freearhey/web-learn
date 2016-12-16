@@ -6,9 +6,9 @@ main
 </template>
 
 <script>
-import PopularVideos from '../components/PopularVideos.vue'
-import RecommendedVideos from '../components/RecommendedVideos.vue'
-import config from '../config'
+import PopularVideos from '~components/PopularVideos.vue'
+import RecommendedVideos from '~components/RecommendedVideos.vue'
+import config from '~config'
 
 export default {
   components: { PopularVideos, RecommendedVideos },

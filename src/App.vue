@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import Nav from './components/Nav.vue'
-import Alert from './components/Alert.vue'
-import events from './events'
-import config from './config'
+import Header from '~components/Header.vue'
+import Footer from '~components/Footer.vue'
+import Nav from '~components/Nav.vue'
+import Alert from '~components/Alert.vue'
+import events from '~events'
+import config from '~config'
 
 export default {
   data() {

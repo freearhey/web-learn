@@ -8,10 +8,10 @@ section.section.is-paddingless(v-if="topic && videos.length")
 </template>
 
 <script>
-import store from '../store'
-import util from '../util'
-import filters from '../api/filters'
-import VideoList from './VideoList.vue'
+import store from '~store'
+import util from '~util'
+import filters from '~api/filters'
+import VideoList from '~components/VideoList.vue'
 
 export default {
   components: {

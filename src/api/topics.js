@@ -1,4 +1,4 @@
-import topics from '../topics'
+import topics from '~topics'
 
 export default {
   list(params) {

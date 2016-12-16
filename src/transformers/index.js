@@ -1,6 +1,6 @@
-import video from './video'
-import topic from './topic'
-import channel from './channel'
+import video from '~transformers/video'
+import topic from '~transformers/topic'
+import channel from '~transformers/channel'
 
 export default {
   video,

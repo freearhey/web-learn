@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import Select from '../components/Select.vue'
-import Spinner from '../components/Spinner.vue'
-import VideoList from '../components/VideoList.vue'
-import filters from '../api/filters'
-import store from '../store'
-import config from '../config'
+import Select from '~components/Select.vue'
+import Spinner from '~components/Spinner.vue'
+import VideoList from '~components/VideoList.vue'
+import filters from '~api/filters'
+import store from '~store'
+import config from '~config'
 
 export default {
   components: {

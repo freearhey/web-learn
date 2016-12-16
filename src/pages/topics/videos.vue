@@ -6,10 +6,10 @@ section.section(v-infinite-scroll="loadMore",infinite-scroll-disabled="loading")
 </template>
 
 <script>
-import store from '../store'
-import util from '../util'
-import VideoList from '../components/VideoList.vue'
-import Spinner from '../components/Spinner.vue'
+import store from '~store'
+import util from '~util'
+import VideoList from '~components/VideoList.vue'
+import Spinner from '~components/Spinner.vue'
 
 export default {
   components: {

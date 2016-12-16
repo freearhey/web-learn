@@ -16,10 +16,10 @@ main
 </template>
 
 <script>
-import store from '../store'
-import config from '../config'
-import TopicList from '../components/TopicList.vue'
-import Select from '../components/Select.vue'
+import store from '~store'
+import config from '~config'
+import TopicList from '~components/TopicList.vue'
+import Select from '~components/Select.vue'
 
 export default {
   components: { TopicList, 'v-select': Select },

@@ -23,8 +23,8 @@ main
 </template>
 
 <script>
-import store from '../store'
-import config from '../config'
+import store from '~store'
+import config from '~config'
 
 export default {
   data() {

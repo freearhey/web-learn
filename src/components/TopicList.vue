@@ -17,7 +17,7 @@ transition(
 
 <script>
 import chunk from 'lodash.chunk'
-import Topic from '../components/Topic.vue'
+import Topic from '~components/Topic.vue'
 
 export default {
   components: {

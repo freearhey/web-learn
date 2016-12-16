@@ -1,9 +1,9 @@
 import map from 'lodash.map'
 import orderBy from 'lodash.orderby'
 import merge from 'lodash.merge'
-import api from '../api'
-import events from '../events'
-import transform from '../transformers'
+import api from '~api'
+import events from '~events'
+import transform from '~transformers'
 
 const store = {
   currentVideo: null,

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import config from '../config'
+import config from '~config'
 import merge from 'lodash.merge'
 
 export default {
