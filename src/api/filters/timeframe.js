@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-const timeframe = [
+export default [
   {
     title: 'All Time',
     value: ''
@@ -22,5 +22,3 @@ const timeframe = [
     value: moment().subtract(365, 'days').toISOString()
   }
 ]
-
-export default timeframe

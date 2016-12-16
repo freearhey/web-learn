@@ -17,6 +17,9 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.3",
     "css-loader": "^0.26.1",
+    "eslint": "^3.12.2",
+    "eslint-config-vue": "^2.0.1",
+    "eslint-plugin-vue": "^1.0.0",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
     "linkifyjs": "^2.1.3",
@@ -45,5 +48,18 @@
     "webpack": "^2.1.0-beta.27",
     "webpack-dev-server": "^2.1.0-beta.12",
     "yaml-loader": "^0.4.0"
-  }
+  },
+  "description": "Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freearhey/web-learn.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freearhey/web-learn/issues"
+  },
+  "homepage": "https://github.com/freearhey/web-learn#readme"
 }

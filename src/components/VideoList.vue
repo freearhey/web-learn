@@ -17,12 +17,11 @@ transition(
 
 <script>
 import chunk from 'lodash.chunk'
-import store from '../store'
-import Video from '../components/Video.vue'
+import Video from '~components/Video.vue'
 
 export default {
-  components: { 
-    'v-video': Video 
+  components: {
+    'v-video': Video
   },
   props: {
     videos: Array,
@@ -33,7 +32,7 @@ export default {
   },
   computed: {
     columnSize() {
-      return 'is-' +  Math.floor(12/this.columns)
+      return 'is-' + Math.floor(12 / this.columns)
     }
   },
   methods: {

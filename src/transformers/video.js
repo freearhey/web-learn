@@ -1,15 +1,15 @@
 export default function(video) {
-  let tags = []
+  const tags = []
 
-  if(video.snippet.tags) { 
+  if(video.snippet.tags) {
     for(let i = 0; i < video.snippet.tags.length; i++) {
       tags.push(video.snippet.tags[i].toLowerCase())
     }
   }
 
-  let likeCount = parseInt(video.statistics.likeCount)
-  let dislikeCount = parseInt(video.statistics.dislikeCount)
-  let rating = likeCount - dislikeCount
+  const likeCount = parseInt(video.statistics.likeCount)
+  const dislikeCount = parseInt(video.statistics.dislikeCount)
+  const rating = likeCount - dislikeCount
 
   return {
     id: video.id,
@@ -24,6 +24,6 @@ export default function(video) {
     viewCount: parseInt(video.statistics.viewCount),
     likeCount: likeCount,
     dislikeCount: dislikeCount,
-    rating: rating,
+    rating: rating
   }
 }

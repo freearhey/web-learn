@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import Nav from './components/Nav.vue'
-import Alert from './components/Alert.vue'
-import events from './events'
-import config from './config'
+import Header from '~components/Header.vue'
+import Footer from '~components/Footer.vue'
+import Nav from '~components/Nav.vue'
+import Alert from '~components/Alert.vue'
+import events from '~events'
+import config from '~config'
 
 export default {
   data() {
     return {
-      errors: [],
+      errors: []
     }
   },
   computed: {
@@ -43,8 +43,8 @@ export default {
     meta() {
       return [
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:creator', content: '@'+this.app.twitter.username },
-        { name: 'twitter:site', content: '@'+this.app.twitter.username },
+        { name: 'twitter:creator', content: '@' + this.app.twitter.username },
+        { name: 'twitter:site', content: '@' + this.app.twitter.username },
         { name: 'twitter:title', content: this.app.title },
         { name: 'twitter:description', content: this.app.description },
         { name: 'twitter:image', content: this.app.url + this.app.logo.share },
@@ -55,7 +55,7 @@ export default {
         { property: 'og:image:type', content: 'image/png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
-        { property: 'og:description', content: this.app.description },
+        { property: 'og:description', content: this.app.description }
       ]
     }
   }

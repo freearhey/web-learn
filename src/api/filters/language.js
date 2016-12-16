@@ -1,4 +1,4 @@
-const language = [
+export default [
   {
     title: 'Czech',
     value: 'cs'
@@ -28,5 +28,3 @@ const language = [
     value: 'ru'
   }
 ]
-
-export default language

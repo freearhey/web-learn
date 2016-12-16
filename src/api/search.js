@@ -1,8 +1,8 @@
 import axios from 'axios'
-import config from '../config'
+import config from '~config'
 import merge from 'lodash.merge'
 
-let search = {
+export default {
   list(params) {
     merge(params, config.api.search.params)
 
@@ -13,5 +13,3 @@ let search = {
                 .catch((error) => Promise.reject(error))
   }
 }
-
-export default search

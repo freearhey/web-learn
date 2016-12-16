@@ -1,7 +1,7 @@
 <template lang="pug">
-  .player(:style="style")
-    .player__wrapper
-      iframe(:src="src",frameborder="0",allowfullscreen)
+.player(:style="style")
+  .player__wrapper
+    iframe(:src="src",frameborder="0",allowfullscreen)
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
     },
     autoplay: {
       type: Boolean,
-      default: false,
+      default: false
     }
   },
   computed: {
@@ -32,10 +32,10 @@ export default {
       return this.baseUrl.replace('$id', this.id).replace('$params', this.getParams())
     },
     style() {
-      let width = (this.width) ? 'width:' + this.width + 'px;' : '';
-      let height = (this.height) ? 'height:' + this.height + 'px;' : '';
+      const width = (this.width) ? 'width:' + this.width + 'px;' : ''
+      const height = (this.height) ? 'height:' + this.height + 'px;' : ''
 
-      return width + height;
+      return width + height
     },
     settings() {
       return {
@@ -45,14 +45,14 @@ export default {
   },
   methods: {
     getParams: function() {
-      let str = "";
-      for (let key in this.settings) {
-          if (str != "") {
-              str += "&";
-          }
-          str += key + "=" + encodeURIComponent(this.settings[key]);
+      let str = ''
+      for(const key in this.settings) {
+        if(str !== '') {
+          str += '&'
+        }
+        str += key + '=' + encodeURIComponent(this.settings[key])
       }
-      return str;
+      return str
     }
   }
 }

@@ -1,11 +1,9 @@
-import video from './video'
-import topic from './topic'
-import channel from './channel'
+import video from '~transformers/video'
+import topic from '~transformers/topic'
+import channel from '~transformers/channel'
 
-let transformers = {
+export default {
   video,
   channel,
   topic
 }
-
-export default transformers

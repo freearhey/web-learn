@@ -1,5 +1,3 @@
 import Vue from 'vue'
 
-let events = new Vue()
-
-export default events
+export default new Vue()

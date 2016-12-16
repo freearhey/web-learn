@@ -1,8 +1,8 @@
 import axios from 'axios'
-import config from '../config'
+import config from '~config'
 import merge from 'lodash.merge'
 
-let channels = {
+export default {
   list(params) {
     merge(params, config.api.channels.params)
 
@@ -13,5 +13,3 @@ let channels = {
                 .catch(error => Promise.reject(error))
   }
 }
-
-export default channels

@@ -14,7 +14,7 @@ nav.nav.has-shadow
 </template>
 
 <script>
-import store from '../store'
+import store from '~store'
 
 export default {
   data() {

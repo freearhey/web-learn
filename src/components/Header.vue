@@ -19,8 +19,8 @@ header.nav.header
 </template>
 
 <script>
-import config from '../config'
-import Search from './Search.vue'
+import config from '~config'
+import Search from '~components/Search.vue'
 
 export default {
   components: { Search },

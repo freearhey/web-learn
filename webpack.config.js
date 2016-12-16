@@ -13,6 +13,22 @@ module.exports = {
   devServer: {
     historyApiFallback: true
   },
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname, 'src/'),
+      '~api': path.resolve(__dirname, 'src/api/'),
+      '~assets': path.resolve(__dirname, 'src/assets/'),
+      '~components': path.resolve(__dirname, 'src/components/'),
+      '~config': path.resolve(__dirname, 'src/weblearn.config.js'),
+      '~events': path.resolve(__dirname, 'src/events/'),
+      '~pages': path.resolve(__dirname, 'src/pages/'),
+      '~store': path.resolve(__dirname, 'src/store/'),
+      '~topics': path.resolve(__dirname, 'src/topics/'),
+      '~transformers': path.resolve(__dirname, 'src/transformers/'),
+      '~util': path.resolve(__dirname, 'src/util/'),
+      '~widgets': path.resolve(__dirname, 'src/widgets/')
+    }
+  },
   module: {
     rules: [
       {
@@ -60,7 +76,7 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CopyWebpackPlugin([
-      { from: 'src/assets'}
+      { from: 'src/static' }
     ]),
     new webpack.DefinePlugin({
       'process.env': {
@@ -73,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false,
         unused: true,
         dead_code: true,
-        drop_console: true,
+        drop_console: true
       },
       output: {
         comments: false
