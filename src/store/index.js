@@ -5,7 +5,9 @@ import api from '~api'
 import events from '~events'
 import transform from '~transformers'
 
-const store = {}
+const store = {
+  currentChannel: {}
+}
 
 /*
  * Fetch video by id
@@ -82,7 +84,7 @@ store.fetchTopics = (params) => {
 store.fetchChannel = (id) => {
   return new Promise((resolve, reject) => {
     api.channels.list({ id }).then(data => {
-      const channel = transform.channel(data.items[0])
+      const channel = store.currentChannel = transform.channel(data.items[0])
       resolve(channel)
     }).catch(err => {
       events.$emit('api.error', err)
