@@ -54,7 +54,8 @@ export default {
       video: null,
       loaded: false,
       params: {
-        description: 'Video'
+        title: '',
+        description: ''
       }
     }
   },
@@ -84,24 +85,19 @@ export default {
   methods: {
     loadVideo() {
       store.fetchVideo(this.$route.params.id).then(video => {
-        document.title = video.title + ' - ' + config.app.name
         store.fetchChannel(video.channelId).then(channel => {
           video.channel = channel
+          video.topics = []
+          this.video = video
+          this.loaded = true
+          this.params.title = video.title
+          this.params.description = truncate(video.description.replace(/\r?\n|\r/g, ''), { 'length': 155, 'separator': ' ' })
+          this.$emit('updateHead')
           const id = video.tags.join(',')
           if(id) {
             store.fetchTopics({ id }).then(topics => {
-              video.topics = topics
-              this.video = video
-              this.loaded = true
-              this.params.description = truncate(video.description.replace(/\r?\n|\r/g, ''), { 'length': 155, 'separator': ' ' })
-              this.$emit('updateHead')
+              this.video.topics = topics
             })
-          } else {
-            video.topics = []
-            this.video = video
-            this.loaded = true
-            this.params.description = truncate(video.description.replace(/\r?\n|\r/g, ''), { 'length': 155, 'separator': ' ' })
-            this.$emit('updateHead')
           }
         })
       }).catch(() => {
@@ -110,6 +106,13 @@ export default {
     }
   },
   head: {
+    title() {
+      return {
+        inner: this.params.title,
+        separator: '-',
+        complement: config.app.name
+      }
+    },
     meta() {
       return [
         { name: 'description', content: this.params.description }

@@ -5,13 +5,7 @@ import api from '~api'
 import events from '~events'
 import transform from '~transformers'
 
-const store = {
-  currentVideo: null,
-  currentChannel: null,
-  currentTopic: null
-}
-
-export default store
+const store = {}
 
 /*
  * Fetch video by id
@@ -19,7 +13,7 @@ export default store
 store.fetchVideo = (id) => {
   return new Promise((resolve, reject) => {
     api.videos.list({ id }).then(data => {
-      const video = store.currentVideo = transform.video(data.items[0])
+      const video = transform.video(data.items[0])
       resolve(video)
     }).catch(err => {
       events.$emit('api.error', err)
@@ -58,7 +52,7 @@ store.fetchVideos = (params) => {
 store.fetchTopic = (id) => {
   return new Promise((resolve, reject) => {
     api.topics.list({ id }).then(data => {
-      const topic = store.currentTopic = transform.topic(data.items[0])
+      const topic = transform.topic(data.items[0])
       resolve(topic)
     }).catch(err => {
       events.$emit('api.error', err)
@@ -88,7 +82,7 @@ store.fetchTopics = (params) => {
 store.fetchChannel = (id) => {
   return new Promise((resolve, reject) => {
     api.channels.list({ id }).then(data => {
-      const channel = store.currentChannel = transform.channel(data.items[0])
+      const channel = transform.channel(data.items[0])
       resolve(channel)
     }).catch(err => {
       events.$emit('api.error', err)
@@ -96,3 +90,5 @@ store.fetchChannel = (id) => {
     })
   })
 }
+
+export default store

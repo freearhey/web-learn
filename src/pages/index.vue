@@ -12,8 +12,20 @@ import config from '~config'
 
 export default {
   components: { PopularVideos, RecommendedVideos },
+  head: {
+    title() {
+      return {
+        inner: config.app.name,
+        separator: ' '
+      }
+    },
+    meta() {
+      return [
+        { name: 'description', content: config.app.description }
+      ]
+    }
+  },
   created() {
-    document.title = config.app.name
     this.$Progress.start()
   }
 }

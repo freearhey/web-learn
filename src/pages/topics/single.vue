@@ -29,7 +29,10 @@ import config from '~config'
 export default {
   data() {
     return {
-      topic: null
+      topic: null,
+      params: {
+        title: ''
+      }
     }
   },
   created() {
@@ -44,9 +47,19 @@ export default {
   methods: {
     loadTopic() {
       store.fetchTopic(this.$route.params.id).then(topic => {
-        document.title = topic.title + ' - ' + config.app.name
+        this.params.title = topic.title
         this.topic = topic
+        this.$emit('updateHead')
       })
+    }
+  },
+  head: {
+    title() {
+      return {
+        inner: this.params.title,
+        separator: '-',
+        complement: config.app.name
+      }
     }
   }
 }

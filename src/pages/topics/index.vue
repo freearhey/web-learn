@@ -19,10 +19,10 @@ main
 import store from '~store'
 import config from '~config'
 import TopicList from '~components/TopicList.vue'
-import Select from '~components/Select.vue'
+import vSelect from '~components/Select.vue'
 
 export default {
-  components: { TopicList, 'v-select': Select },
+  components: { TopicList, vSelect },
   data() {
     return {
       topics: [],
@@ -33,8 +33,16 @@ export default {
       order: 'title'
     }
   },
+  head: {
+    title() {
+      return {
+        inner: 'Topics',
+        separator: '-',
+        complement: config.app.name
+      }
+    }
+  },
   created() {
-    document.title = 'Topics - ' + config.app.name
     this.loadTopics()
   },
   watch: {

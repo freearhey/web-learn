@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Select from '~components/Select.vue'
+import vSelect from '~components/Select.vue'
 import Spinner from '~components/Spinner.vue'
 import VideoList from '~components/VideoList.vue'
 import filters from '~api/filters'
@@ -42,11 +42,7 @@ import store from '~store'
 import config from '~config'
 
 export default {
-  components: {
-    'v-select': Select,
-    'video-list': VideoList,
-    'spinner': Spinner
-  },
+  components: { vSelect, VideoList, Spinner },
   data() {
     return {
       orderOptions: filters.order,
@@ -59,7 +55,10 @@ export default {
       limit: 28,
       loading: false,
       nextPage: null,
-      noResults: false
+      noResults: false,
+      params: {
+        title: ''
+      }
     }
   },
   computed: {
@@ -70,9 +69,17 @@ export default {
       return config.app.logo
     }
   },
+  head: {
+    title() {
+      return {
+        inner: this.params.title,
+        separator: '-',
+        complement: config.app.name
+      }
+    }
+  },
   created() {
     this.$Progress.start()
-    document.title = this.query + ' - ' + config.app.name
     this.nextPage = null
     this.loadResults()
   },
@@ -111,6 +118,8 @@ export default {
     loadResults() {
       this.noResults = false
       this.loading = true
+      this.params.title = this.query
+      this.$emit('updateHead')
 
       const params = {
         q: '($q)'.replace(/\$q/g, this.query),

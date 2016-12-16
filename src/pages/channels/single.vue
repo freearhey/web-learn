@@ -29,7 +29,10 @@ import config from '~config'
 export default {
   data() {
     return {
-      channel: null
+      channel: null,
+      params: {
+        title: ''
+      }
     }
   },
   computed: {
@@ -53,11 +56,21 @@ export default {
   methods: {
     loadChannel() {
       store.fetchChannel(this.$route.params.id).then(channel => {
-        document.title = channel.title + ' - ' + config.app.name
+        this.params.title = channel.title
         this.channel = channel
+        this.$emit('updateHead')
       }).catch(() => {
         this.$Progress.fail()
       })
+    }
+  },
+  head: {
+    title() {
+      return {
+        inner: this.params.title,
+        separator: '-',
+        complement: config.app.name
+      }
     }
   }
 }
