@@ -42,7 +42,7 @@ import store from '../store'
 import config from '../config'
 
 export default {
-  components: { 
+  components: {
     'v-select': Select,
     'video-list': VideoList,
     'spinner': Spinner
@@ -101,18 +101,18 @@ export default {
   methods: {
     changeOrder(order) {
       this.order = order
-    }, 
+    },
     changeLanguage(language) {
       this.language = language
-    }, 
+    },
     changeTimeframe(timeframe) {
       this.timeframe = timeframe
-    },  
+    },
     loadResults() {
       this.noResults = false
       this.loading = true
 
-      let params = {
+      const params = {
         q: '($q)'.replace(/\$q/g, this.query),
         order: this.order,
         maxResults: this.limit,
@@ -126,7 +126,7 @@ export default {
         this.loading = false
         this.$Progress.finish()
         if(!result.videos.length) {
-          this.noResults = (!this.results.length) ? true : false
+          this.noResults = (!this.results.length)
           this.nextPage = null
           return
         }
@@ -134,11 +134,11 @@ export default {
         result.videos.map(video => {
           this.results.push(video)
         })
-      }).catch(err => {
+      }).catch(() => {
         this.loading = false
         this.$Progress.fail()
       })
-    },  
+    },
     loadMore() {
       if(!this.nextPage) { return }
       this.loadResults()

@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../config'
 import merge from 'lodash.merge'
 
-let videos = {
+export default {
   list(params) {
     merge(params, config.api.videos.params)
 
@@ -13,5 +13,3 @@ let videos = {
                 .catch((error) => Promise.reject(error))
   }
 }
-
-export default videos

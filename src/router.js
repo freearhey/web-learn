@@ -13,10 +13,15 @@ import ChannelAboutView from './views/ChannelAboutView.vue'
 
 Vue.use(VueRouter)
 
-let routes = [
+const routes = [
   { path: '/', component: HomeView, meta: { scrollTop: true } },
   { path: '/topics', name: 'topics', component: TopicsView, meta: { scrollTop: true } },
-  { path: '/topic/:id', name: 'topic', component: TopicView, meta: { scrollTop: true }, redirect: { name: 'topic-popular-videos' },
+  {
+    path: '/topic/:id',
+    name: 'topic',
+    component: TopicView,
+    meta: { scrollTop: true },
+    redirect: { name: 'topic-popular-videos' },
     children: [
       {
         path: 'recent',
@@ -32,7 +37,12 @@ let routes = [
       }
     ]
   },
-  { path: '/channel/:id', name: 'channel', component: ChannelView, meta: { scrollTop: true }, redirect: { name: 'channel-recent-videos' },
+  {
+    path: '/channel/:id',
+    name: 'channel',
+    component: ChannelView,
+    meta: { scrollTop: true },
+    redirect: { name: 'channel-recent-videos' },
     children: [
       {
         path: 'about',
@@ -46,16 +56,15 @@ let routes = [
         component: ChannelVideosView,
         meta: { scrollTop: false, order: 'date' }
       }
-    ] 
+    ]
   },
   { path: '/video/:id', name: 'video', component: VideoView, meta: { scrollTop: true } },
-  { path: '/search*', name: 'search', component: SearchView, meta: { scrollTop: true } },
+  { path: '/search*', name: 'search', component: SearchView, meta: { scrollTop: true } }
 ]
 
-let router = new VueRouter({
+const router = new VueRouter({
   routes,
-  linkActiveClass: 'is-active',
-  // mode: 'history'
+  linkActiveClass: 'is-active'
 })
 
 router.beforeEach((to, from, next) => {

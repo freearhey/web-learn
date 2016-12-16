@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     loadVideos() {
-      let params = {
+      const params = {
         channelId: this.channel.id,
-        order: filters.order[2].value, 
-        maxResults: this.limit,
+        order: filters.order[2].value,
+        maxResults: this.limit
       }
 
       store.fetchVideos(params).then(result => {

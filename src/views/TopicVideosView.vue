@@ -12,7 +12,7 @@ import VideoList from '../components/VideoList.vue'
 import Spinner from '../components/Spinner.vue'
 
 export default {
-  components: { 
+  components: {
     VideoList,
     Spinner
   },
@@ -41,8 +41,7 @@ export default {
       this.loading = true
 
       store.fetchTopic(this.$route.params.id).then(topic => {
-
-        let params = {
+        const params = {
           q: util.prepareQuery(topic),
           order: this.$route.meta.order,
           maxResults: this.limit,
@@ -61,15 +60,15 @@ export default {
           result.videos.forEach(video => {
             this.videos.push(video)
           })
-        }).catch(err => {
+        }).catch(() => {
           this.loading = false
           this.$Progress.fail()
         })
-      }).catch(err => {
+      }).catch(() => {
         this.loading = false
         this.$Progress.fail()
       })
-    },  
+    },
     loadMore() {
       if(!this.nextPage) { return }
       this.loadVideos()

@@ -11,7 +11,7 @@ import VideoList from '../components/VideoList.vue'
 import Spinner from '../components/Spinner.vue'
 
 export default {
-  components: { 
+  components: {
     VideoList,
     Spinner
   },
@@ -40,9 +40,9 @@ export default {
   methods: {
     loadVideos() {
       this.loaded = false
-      
-      let params = { 
-        order: this.$route.meta.order, 
+
+      const params = {
+        order: this.$route.meta.order,
         maxResults: this.limit,
         channelId: this.$route.params.id,
         pageToken: this.nextPage
@@ -59,11 +59,11 @@ export default {
         result.videos.forEach(video => {
           this.videos.push(video)
         })
-      }).catch(err => {
+      }).catch(() => {
         this.loaded = true
         this.$Progress.fail()
       })
-    },  
+    },
     loadMore() {
       if(!this.nextPage) { return }
       this.loadVideos()

@@ -32,7 +32,7 @@ main
 </template>
 
 <script>
-import moment from 'moment' 
+import moment from 'moment'
 import numeral from 'numeral'
 import Player from '../components/Player.vue'
 import ChannelRecentVideos from '../components/ChannelRecentVideos.vue'
@@ -44,7 +44,7 @@ import linkifyjs from 'linkifyjs/html'
 import truncate from 'lodash.truncate'
 
 export default {
-  components: { 
+  components: {
     Player,
     ChannelRecentVideos,
     TopicRelatedVideos
@@ -66,7 +66,7 @@ export default {
       return numeral(this.video.viewCount).format('0,0') + ' views'
     },
     description() {
-      return nl2br(linkifyjs(this.video.description,false))
+      return nl2br(linkifyjs(this.video.description, false))
     }
   },
   created() {
@@ -87,24 +87,24 @@ export default {
         document.title = video.title + ' - ' + config.app.name
         store.fetchChannel(video.channelId).then(channel => {
           video.channel = channel
-          let id = video.tags.join(',')
+          const id = video.tags.join(',')
           if(id) {
             store.fetchTopics({ id }).then(topics => {
-              video.topics = topics            
+              video.topics = topics
               this.video = video
               this.loaded = true
               this.params.description = truncate(video.description.replace(/\r?\n|\r/g, ''), { 'length': 155, 'separator': ' ' })
               this.$emit('updateHead')
             })
           } else {
-            video.topics = []            
+            video.topics = []
             this.video = video
             this.loaded = true
             this.params.description = truncate(video.description.replace(/\r?\n|\r/g, ''), { 'length': 155, 'separator': ' ' })
             this.$emit('updateHead')
           }
         })
-      }).catch(err => {
+      }).catch(() => {
         this.loaded = true
       })
     }

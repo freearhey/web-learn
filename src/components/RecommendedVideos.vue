@@ -12,7 +12,7 @@ import filters from '../api/filters'
 import VideoList from './VideoList.vue'
 
 export default {
-  components: { 
+  components: {
     VideoList
   },
   data() {
@@ -29,7 +29,7 @@ export default {
     loadVideos() {
       this.loaded = false
       store.fetchTopics().then(topics => {
-        let params = {
+        const params = {
           q: util.prepareQuery(topics),
           videoCategoryId: 27,
           order: filters.order[3].value,
@@ -41,10 +41,10 @@ export default {
           this.videos = result.videos
           this.$Progress.finish()
           this.loaded = true
-        }).catch(err => {
+        }).catch(() => {
           this.$Progress.fail()
         })
-      }).catch(err => {
+      }).catch(() => {
         this.$Progress.fail()
       })
     }

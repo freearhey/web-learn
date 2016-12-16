@@ -17,12 +17,11 @@ transition(
 
 <script>
 import chunk from 'lodash.chunk'
-import store from '../store'
 import Topic from '../components/Topic.vue'
 
 export default {
-  components: { 
-    'v-topic': Topic 
+  components: {
+    'v-topic': Topic
   },
   props: {
     topics: Array,
@@ -33,7 +32,7 @@ export default {
   },
   computed: {
     columnSize() {
-      return 'is-' +  Math.floor(12/this.columns)
+      return 'is-' + Math.floor(12 / this.columns)
     }
   },
   methods: {

@@ -55,7 +55,7 @@ export default {
       store.fetchChannel(this.$route.params.id).then(channel => {
         document.title = channel.title + ' - ' + config.app.name
         this.channel = channel
-      }).catch(err => {
+      }).catch(() => {
         this.$Progress.fail()
       })
     }

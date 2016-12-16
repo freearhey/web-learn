@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     loadVideos() {
-      let params = {
+      const params = {
         q: util.prepareQuery(this.topic),
         order: filters.order[3].value,
         maxResults: this.limit

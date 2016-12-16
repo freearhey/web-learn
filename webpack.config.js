@@ -73,7 +73,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false,
         unused: true,
         dead_code: true,
-        drop_console: true,
+        drop_console: true
       },
       output: {
         comments: false

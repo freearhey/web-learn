@@ -35,7 +35,7 @@ export default {
         {
           'Alert--info': this.type === 'info',
           'Alert--error': this.type === 'error',
-          'Alert--log': this.type === 'log',
+          'Alert--log': this.type === 'log'
         },
         {
           'Alert--top-left': this.position === 'top-left',
@@ -48,7 +48,7 @@ export default {
       ]
     },
     enterClass() {
-      return (this.position.indexOf('top') !== -1) ? 'fadeInDown': 'fadeInUp'
+      return (this.position.indexOf('top') !== -1) ? 'fadeInDown' : 'fadeInUp'
     }
   },
   data() {
@@ -57,8 +57,8 @@ export default {
     }
   },
   created() {
-    setTimeout(() => { 
-      this.show = true 
+    setTimeout(() => {
+      this.show = true
       if(this.autohide) {
         setTimeout(() => { this.show = false }, this.duration)
       }

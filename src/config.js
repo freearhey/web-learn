@@ -1,11 +1,10 @@
-const env = (process.env.NODE_ENV === 'production') ? require('../.env.production') : require('../.env.local'),
-      baseUri = 'https://www.googleapis.com/youtube/v3',
-      apiKey = env.YOUTUBE_API_KEY
-
+const env = (process.env.NODE_ENV === 'production') ? require('../.env.production') : require('../.env.local')
+const baseUri = 'https://www.googleapis.com/youtube/v3'
+const apiKey = env.YOUTUBE_API_KEY
 const title = 'Web Learn: it\'s like YouTube Gaming, but for Web Developers'
 const tweet = encodeURIComponent(title)
 
-let config = {
+export default {
   app: {
     name: 'Web Learn',
     url: 'https://freearhey.github.io/web-learn/',
@@ -28,7 +27,7 @@ let config = {
     links: [
       '<a class="github-button" href="https://github.com/freearhey/web-learn" data-count-href="/freearhey/web-learn/stargazers" data-count-api="/repos/freearhey/web-learn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star freearhey/web-learn on GitHub">Star</a>',
       '<a class="twitter-follow-button" href="https://twitter.com/arhey">Follow @arhey</a>',
-      '<a class="twitter-share-button" data-via="arhey" href="https://twitter.com/intent/tweet?text='+tweet+'">Tweet</a>',
+      '<a class="twitter-share-button" data-via="arhey" href="https://twitter.com/intent/tweet?text=' + tweet + '">Tweet</a>'
     ]
   },
   api: {
@@ -48,7 +47,7 @@ let config = {
       params: {
         key: apiKey,
         part: 'contentDetails,snippet,statistics',
-        fields: 'items(contentDetails/duration,id,snippet(channelId,channelTitle,description,publishedAt,tags,thumbnails,title),statistics(dislikeCount,likeCount,viewCount)),nextPageToken,prevPageToken',
+        fields: 'items(contentDetails/duration,id,snippet(channelId,channelTitle,description,publishedAt,tags,thumbnails,title),statistics(dislikeCount,likeCount,viewCount)),nextPageToken,prevPageToken'
       }
     },
     channels: {
@@ -60,5 +59,3 @@ let config = {
     }
   }
 }
-
-export default config

@@ -1,14 +1,11 @@
 import map from 'lodash.map'
 import orderBy from 'lodash.orderby'
-import without from 'lodash.without'
 import merge from 'lodash.merge'
 import api from '../api'
-import moment from 'moment'
-import config from '../config'
 import events from '../events'
 import transform from '../transformers'
 
-let store = {
+const store = {
   currentVideo: null,
   currentChannel: null,
   currentTopic: null
@@ -16,14 +13,13 @@ let store = {
 
 export default store
 
-
 /*
  * Fetch video by id
  */
 store.fetchVideo = (id) => {
   return new Promise((resolve, reject) => {
     api.videos.list({ id }).then(data => {
-      let video = store.currentVideo = transform.video(data.items[0])
+      const video = store.currentVideo = transform.video(data.items[0])
       resolve(video)
     }).catch(err => {
       events.$emit('api.error', err)
@@ -39,13 +35,13 @@ store.fetchVideos = (params) => {
   return new Promise((resolve, reject) => {
     merge(params, { type: 'video' })
     api.search.list(params).then(data => {
-      let nextPageToken = data.nextPageToken
-      let id = map(data.items, 'id.videoId').join(',')
+      const nextPageToken = data.nextPageToken
+      const id = map(data.items, 'id.videoId').join(',')
       api.videos.list({ id }).then(data => {
         let videos = data.items.map(transform.video)
         videos = orderBy(videos, params.order, 'desc')
         resolve({ videos, nextPageToken })
-      }).catch(err => {          
+      }).catch(err => {
         events.$emit('api.error', err)
         reject(err)
       })
@@ -56,16 +52,15 @@ store.fetchVideos = (params) => {
   })
 }
 
-
 /*
  * Fetch topic by id
  */
 store.fetchTopic = (id) => {
   return new Promise((resolve, reject) => {
     api.topics.list({ id }).then(data => {
-      let topic = store.currentTopic = transform.topic(data.items[0])
+      const topic = store.currentTopic = transform.topic(data.items[0])
       resolve(topic)
-    }).catch(err => {     
+    }).catch(err => {
       events.$emit('api.error', err)
       reject(err)
     })
@@ -78,15 +73,14 @@ store.fetchTopic = (id) => {
 store.fetchTopics = (params) => {
   return new Promise((resolve, reject) => {
     api.topics.list(params).then(data => {
-      let topics = data.items.map(transform.topic) 
+      const topics = data.items.map(transform.topic)
       resolve(topics)
-    }).catch(err => {     
+    }).catch(err => {
       events.$emit('api.error', err)
       reject(err)
     })
   })
 }
-
 
 /*
  * Fetch channel by id
@@ -94,7 +88,7 @@ store.fetchTopics = (params) => {
 store.fetchChannel = (id) => {
   return new Promise((resolve, reject) => {
     api.channels.list({ id }).then(data => {
-      let channel = store.currentChannel = transform.channel(data.items[0])
+      const channel = store.currentChannel = transform.channel(data.items[0])
       resolve(channel)
     }).catch(err => {
       events.$emit('api.error', err)

@@ -3,10 +3,10 @@ import topics from '../topics'
 export default {
   list(params) {
     return new Promise((resolve, reject) => {
-      let items = topics,
-          id, 
-          order, 
-          limit
+      let items = topics
+      let id
+      let order
+      let limit
 
       if(params) {
         id = params.id || null
@@ -15,9 +15,9 @@ export default {
       }
 
       if(id) {
-        let searchIds = id.split(',')
+        const searchIds = id.split(',')
         items = items.filter(item => {
-          for(let i = 0; i < searchIds.length; i++){
+          for(let i = 0; i < searchIds.length; i++) {
             return item.id.localeCompare(searchIds[i]) === 0 || item.title.toLowerCase().localeCompare(searchIds[i]) === 0
           }
         })

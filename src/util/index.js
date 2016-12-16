@@ -1,12 +1,12 @@
 import map from 'lodash.map'
 
-let util = {
+export default {
   prepareQuery(topics) {
     let query = ''
-    
+
     if(topics.constructor === Array) {
       // get all topic titles
-      let topicTitles = map(topics, 'title')
+      const topicTitles = map(topics, 'title')
       // transform array of topics to pipe string
       query = topicTitles.join('|')
       // remove all dots
@@ -20,5 +20,3 @@ let util = {
     return '$1'.replace(/\$1/, query)
   }
 }
-
-export default util

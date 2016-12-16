@@ -24,7 +24,7 @@ export default {
       this.$router.push({ path: '/search', query: { q: this.query } })
     },
     insertQuery() {
-      let query = this.$route.query.q
+      const query = this.$route.query.q
       if(query) {
         this.query = query
       }
