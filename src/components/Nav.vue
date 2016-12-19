@@ -42,7 +42,6 @@ nav
   top: 60px
   left: 0
   right: 0
-  z-index: 1000
   strong
     font-weight: 500
 
