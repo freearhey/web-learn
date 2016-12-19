@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     fetchSuggestions(input) {
-      jsonp('http://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=' + input, (err, suggestions) => {
+      jsonp('https://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=' + input, (err, suggestions) => {
         if (err) throw err
         this.suggestions = this.limitBy(suggestions[1], 5)
       })
