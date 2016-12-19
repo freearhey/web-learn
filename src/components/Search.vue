@@ -1,47 +1,40 @@
 <template lang="pug">
 .Search
-  .control.has-icon.is-fullwidth
-    input.input.is-medium.is-expanded(
-      type="text",
-      autocomplete="off"
-      placeholder="Search topics, channels, and videos",
-      v-model="query",
-      @keyup.enter="search"
-    )
-    i.fa.ion-ios-search-strong
+  typeahead(
+    :items="suggestions",
+    placeholder="Search topics, channels, and videos"
+    @hit="search",
+    @type="fetchSuggestions"
+  )
 </template>
 
 <script>
+import Typeahead from '~components/Typeahead.vue'
+import jsonp from 'jsonp'
+
 export default {
+  components: { Typeahead },
   data () {
     return {
-      query: ''
+      suggestions: []
     }
   },
-
   methods: {
-    search() {
-      this.$router.push({ path: '/search', query: { q: this.query } })
+    fetchSuggestions(input) {
+      jsonp('http://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=' + input, (err, suggestions) => {
+        if (err) throw err
+        this.suggestions = this.limitBy(suggestions[1], 5)
+      })
     },
-    insertQuery() {
-      const query = this.$route.query.q
-      if(query) {
-        this.query = query
-      }
+    search(query) {
+      this.$router.push({ path: '/search', query: { q: query.trim() } })
     }
-  },
-  watch: {
-    $route() {
-      this.insertQuery()
-    }
-  },
-  created() {
-    this.insertQuery()
   }
 }
 </script>
 
 <style lang="sass">
 .Search
+  position: relative
   flex-grow: 1 !important
 </style>
