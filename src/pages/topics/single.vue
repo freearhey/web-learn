@@ -91,6 +91,8 @@ $link-color: lighten(#363636, 30%)
     color: #4a8bfa !important
     border-bottom: 1px solid lighten(#4a8bfa, 20%) !important
 
+.nav
+  z-index: 1 !important
 
 .logo
   background-color: #fff
