@@ -37,11 +37,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-nav 
+.nav
   position: fixed !important
   top: 60px
   left: 0
   right: 0
+  z-index: 3
   strong
     font-weight: 500
 

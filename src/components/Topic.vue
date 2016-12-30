@@ -47,7 +47,7 @@ export default {
   .logo
     background-color: #fff
     border-radius: 6px
-    z-index: 10
+    z-index: 2
     border: 5px solid #fff
     top: -37px
     width: 70px

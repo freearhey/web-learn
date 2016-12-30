@@ -40,7 +40,7 @@ export default {
   top: 0
   left: 0
   right: 0
-  z-index: 1000
+  z-index: 4
 .logo
   img
     max-height: 35px

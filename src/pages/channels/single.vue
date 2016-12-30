@@ -98,7 +98,7 @@ $tablet: 769px
   width: 64px
   height: 64px
   @media (min-width: $tablet)
-    z-index: 10
+    z-index: 2
     border: 5px solid #fff
     top: -150px
     width: 200px

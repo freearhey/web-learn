@@ -98,7 +98,7 @@ $link-color: lighten(#363636, 30%)
   width: 64px
   height: 64px
   @media (min-width: $tablet)
-    z-index: 10
+    z-index: 2
     border: 5px solid #fff
     top: -140px
     width: 200px
