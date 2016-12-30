@@ -109,6 +109,7 @@ export default {
 <style lang="sass">
 .Typeahead
   position: relative
+  z-index: 5
   flex-grow: 1 !important
 
 .Typeahead__list
@@ -116,7 +117,6 @@ export default {
   position: absolute
   top: 45px
   left: 30px
-  z-index: 10000
   width: 80%
   text-align: left
   border-radius: 2px
