@@ -6,9 +6,17 @@ export default function(video) {
       tags.push(video.snippet.tags[i].toLowerCase())
     }
   }
+  
+  let likeCount = 0
+  let dislikeCount = 0
+  let viewCount = 0
 
-  const likeCount = parseInt(video.statistics.likeCount)
-  const dislikeCount = parseInt(video.statistics.dislikeCount)
+  if('statistics' in video) {
+    likeCount = parseInt(video.statistics.likeCount)
+    dislikeCount = parseInt(video.statistics.dislikeCount)
+    viewCount = parseInt(video.statistics.viewCount)
+  }
+
   const rating = likeCount - dislikeCount
 
   return {
@@ -21,7 +29,7 @@ export default function(video) {
     channelTitle: video.snippet.channelTitle,
     tags: tags,
     duration: video.contentDetails.duration,
-    viewCount: parseInt(video.statistics.viewCount),
+    viewCount: viewCount,
     likeCount: likeCount,
     dislikeCount: dislikeCount,
     rating: rating
