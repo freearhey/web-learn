@@ -1,8 +1,8 @@
 <template lang="pug">
 nav.nav.has-shadow
   .container
-    .nav-title 
-      p Popular 
+    .nav-title
+      p Popular
       p topics
     .nav-item
       router-link.button.is-white(
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       topics: [],
-      limit: 10
+      limit: 12
     }
   },
   created() {
