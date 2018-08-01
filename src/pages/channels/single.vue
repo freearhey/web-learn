@@ -12,8 +12,10 @@ main
               img(:src="channel.thumbnails.medium.url")
           .media-content
             .content
-              .title.is-3 
+              .title.is-3
                 strong {{ channel.title }}
+                = ' '
+                a.ext-link(:href="channelLink",target="_blank")
     nav.nav.has-underline
       .container
         .nav-center
@@ -42,6 +44,9 @@ export default {
       }
 
       return { backgroundColor: this.channel.profileColor }
+    },
+    channelLink() {
+      return `https://www.youtube.com/channel/${this.channel.id}`
     }
   },
   created() {
@@ -104,13 +109,13 @@ $tablet: 769px
     width: 200px
     height: 200px
     // box-shadow: 0 1px 2px rgba(0,0,0,.1)
-  
+
   &__wrapper
     display: inline-block
     height: 100%
     vertical-align: middle
 
-  img 
+  img
     display: inline-block
     vertical-align: middle
     border-radius: 50%
@@ -121,4 +126,12 @@ $tablet: 769px
   margin-right: 20px
   @media (min-width: $tablet)
     margin-right: 30px
+
+.ext-link
+  border-bottom: none !important
+  &:after
+    content: '\29C9'
+    color: #bbbbbb
+    font-weight: 600
+    font-size: 24px
 </style>

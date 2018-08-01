@@ -22,4 +22,4 @@ To add a logo to a topic you need to upload it to the [topics/icons](https://git
 
 ## Copyright and license
 
-Code copyright 2016 Aleksandr Statciuk. Code released under [the MIT license](https://github.com/freearhey/web-learn/blob/master/LICENSE).
+Code copyright 2018 Aleksandr Statciuk. Code released under [the MIT license](https://github.com/freearhey/web-learn/blob/master/LICENSE).
