@@ -8,11 +8,11 @@ header.nav.header
       search.nav-item
     .nav-right.is-hidden-mobile
       .nav-item
-        a.button(:href="'https://github.com/' + app.github.repo", target="_blank")
+        a.button(:href="'https://github.com/' + app.github.repo", target="_blank", rel="noopener noreferrer")
           span.icon
             i.ion-social-github
           span GitHub
-        a.button(:href="'https://twitter.com/intent/tweet?text=' + app.twitter.tweet + '&url=' + app.url + '&via=' + app.twitter.username", target="_blank")
+        a.button(:href="'https://twitter.com/intent/tweet?text=' + app.twitter.tweet + '&url=' + app.url + '&via=' + app.twitter.username", target="_blank", rel="noopener noreferrer")
           span.icon
             i.ion-social-twitter
           span Tweet
