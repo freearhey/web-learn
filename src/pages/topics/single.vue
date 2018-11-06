@@ -13,7 +13,7 @@ main
           .media-content
             .content
               .title.is-3.topic-title #[strong {{ topic.title }}]
-              a.topic-site(v-if="topic.site",:href="topic.site",target="_blank") {{ topic.site }}
+              a.topic-site(v-if="topic.site",:href="topic.site",target="_blank",rel="noopener noreferrer") {{ topic.site }}
     nav.nav.has-underline
       .container
         .nav-center

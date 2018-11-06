@@ -15,7 +15,7 @@ main
               .title.is-3
                 strong {{ channel.title }}
                 = ' '
-                a.ext-link(:href="channelLink",target="_blank")
+                a.ext-link(:href="channelLink",target="_blank",rel="noopener noreferrer")
     nav.nav.has-underline
       .container
         .nav-center
