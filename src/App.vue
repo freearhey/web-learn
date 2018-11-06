@@ -64,6 +64,6 @@ export default {
 
 <style lang="sass">
 main
-  min-height: 100vh
+  min-height: 80vh
   margin-top: 110px
 </style>
