@@ -1,10 +1,10 @@
 <template lang="pug">
 main
-  .hero.is-black.is-large(v-if="video")
+  .hero.is-black.is-large(v-if="loaded && video && !error")
     .hero-body.is-paddingless
       .container
         player(:id="video.id", autoplay)
-  section.section(v-if="loaded")
+  section.section(v-if="loaded && video && !error")
     .container
       .media
         .media-left
@@ -29,6 +29,10 @@ main
     div(v-for="topic in video.topics")
       topic-related-videos(:topic="topic")
     channel-recent-videos(:channel="video.channel")
+  .hero.is-large(v-if="loaded && error")
+    .hero-body
+      .container.has-text-centered
+        h2.title.is-3 Sorry, but this video is somehow not loaded 😞
 </template>
 
 <script>
@@ -52,7 +56,8 @@ export default {
       params: {
         title: '',
         description: ''
-      }
+      },
+      error: null
     }
   },
   computed: {
@@ -96,8 +101,9 @@ export default {
             })
           }
         })
-      }).catch(() => {
+      }).catch((err) => {
         this.loaded = true
+        this.error = err.message
       })
     }
   },
