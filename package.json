@@ -53,7 +53,7 @@
     "yaml-loader": "^0.4.0"
   },
   "description": "Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "webpack.config.js",
   "repository": {
     "type": "git",
