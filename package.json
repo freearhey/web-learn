@@ -49,7 +49,7 @@
     "vue2-filters": "^0.1.9",
     "webpack": "^2.7.0",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^2.11.3",
+    "webpack-dev-server": "^3.1.11",
     "yaml-loader": "^0.4.0"
   },
   "description": "Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.",
