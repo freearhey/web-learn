@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/main.js',
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/build/',
@@ -13,6 +15,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   resolve: {
     alias: {
       '~': path.resolve(__dirname, 'src/'),
@@ -55,6 +60,10 @@ module.exports = {
         loader: 'json-loader!yaml-loader'
       },
       {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
+      },
+      {
         test: /\.sass$/,
         loader: 'style-loader!css-loader!sass-loader?indentedSyntax'
       },
@@ -74,6 +83,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  module.exports.mode = 'production'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CopyWebpackPlugin([
       { from: 'src/static' }
@@ -81,18 +91,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false,
-        unused: true,
-        dead_code: true,
-        drop_console: true
-      },
-      output: {
-        comments: false
       }
     }),
     new webpack.LoaderOptionsPlugin({

@@ -7,11 +7,13 @@ main
 
 <script>
 import config from '~config'
+import recommendedVideos from '~pages/videos/recommended.vue'
+import popularVideos from '~pages/videos/popular.vue'
 
 export default {
   components: {
-    'recommended-videos': require('~pages/videos/recommended.vue'),
-    'popular-videos': require('~pages/videos/popular.vue')
+    'recommended-videos': recommendedVideos,
+    'popular-videos': popularVideos
   },
   head: {
     title() {
