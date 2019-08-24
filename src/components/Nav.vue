@@ -4,13 +4,12 @@ nav.nav.has-shadow
     .nav-title
       p Popular
       p topics
-    .nav-item
+    .nav-item.is-scrollable
       router-link.button.is-white(
         v-for="topic in topics",
         :to="{ name: 'topic', params: { id: topic.id } }"
       ) #[strong {{ topic.title }}]
-    .nav-item
-      router-link.link(:to="{ name: 'topics' }") #[strong Show all..]
+      router-link.link.more-link(:to="{ name: 'topics' }") #[strong Show all..]
 </template>
 
 <script>
@@ -60,4 +59,11 @@ export default {
 .link
   &:hover
     text-decoration: underline
+
+.is-scrollable
+  overflow-x: scroll
+  width: calc(100% - 100px)
+
+.more-link
+  margin-left: 12px
 </style>
