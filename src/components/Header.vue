@@ -7,7 +7,7 @@ header.nav.header
         img.is-hidden-tablet(:src="app.logo.mini",:alt="app.name")
       search.nav-item
     .nav-right.is-hidden-mobile
-      .nav-item
+      .nav-item.social-buttons
         a.button(:href="'https://github.com/' + app.github.repo", target="_blank", rel="noopener noreferrer")
           span.icon
             i.ion-social-github
@@ -48,4 +48,6 @@ export default {
 .nav-left
   flex-basis: auto
 
+.social-buttons
+  margin-right: 6px
 </style>
