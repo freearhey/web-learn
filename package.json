@@ -1,5 +1,15 @@
 {
   "name": "web-learn",
+  "description": "Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freearhey/web-learn.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freearhey/web-learn/issues"
+  },
   "author": "Arhey <free.arhey@gmail.com>",
   "private": true,
   "scripts": {
@@ -51,18 +61,5 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^2.11.5",
     "yaml-loader": "^0.4.0"
-  },
-  "description": "Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.",
-  "version": "1.2.0",
-  "main": "webpack.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/freearhey/web-learn.git"
-  },
-  "keywords": [],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/freearhey/web-learn/issues"
-  },
-  "homepage": "https://github.com/freearhey/web-learn#readme"
+  }
 }
