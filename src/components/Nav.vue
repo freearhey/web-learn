@@ -63,6 +63,8 @@ export default {
 .is-scrollable
   overflow-x: scroll
   width: calc(100% - 100px)
+  &::-webkit-scrollbar
+    display: none
 
 .more-link
   margin-left: 12px
