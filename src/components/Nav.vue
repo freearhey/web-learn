@@ -7,6 +7,7 @@ nav.nav.has-shadow
     .nav-item.is-scrollable
       router-link.button.is-white(
         v-for="topic in topics",
+        :key="topic.id",
         :to="{ name: 'topic', params: { id: topic.id } }"
       ) #[strong {{ topic.title }}]
       router-link.link.more-link(:to="{ name: 'topics' }") #[strong Show all..]

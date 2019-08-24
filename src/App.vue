@@ -5,7 +5,7 @@
     router-view
     vue-progress-bar
     div(v-if="errors.length")
-      alert(v-for="error in errors",type="info",:message="error",position="bottom-right",autohide) 
+      alert(v-for="error, i in errors",:key="i",type="info",:message="error",position="bottom-right",autohide) 
     v-footer
 </template>
 
