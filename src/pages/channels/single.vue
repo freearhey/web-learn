@@ -16,6 +16,8 @@ main
                 strong {{ channel.title }}
                 = ' '
                 a.ext-link(:href="channelLink",target="_blank",rel="noopener noreferrer")
+                  span.icon
+                    i.ion-link
     nav.nav.has-underline
       .container
         .nav-center
@@ -129,8 +131,8 @@ $tablet: 769px
 
 .ext-link
   border-bottom: none !important
-  &:after
-    content: '\29C9'
+  display: inline-flex
+  > .icon
     color: #bbbbbb
     font-weight: 600
     font-size: 24px
