@@ -50,4 +50,6 @@ export default {
 
 .social-buttons
   margin-right: 6px
+  .button
+    color: #4a4a4a
 </style>
