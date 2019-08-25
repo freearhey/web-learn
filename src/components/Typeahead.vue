@@ -10,7 +10,8 @@
       @keyup.esc="reset",
       @keyup.down="down",
       @keyup.up="up"
-      @keyup="update"
+      @keyup="update",
+      aria-label="search"
     )
     i.fa.ion-ios-search-strong
   .Typeahead__list.panel(v-if="hasItems && show")
