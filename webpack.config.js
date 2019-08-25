@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -82,9 +84,10 @@ module.exports = {
   }
 }
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'analyzer') {
   module.exports.mode = 'production'
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new MomentLocalesPlugin(),
     new CopyWebpackPlugin([
       { from: 'src/static' }
     ]),
@@ -98,4 +101,10 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.OccurrenceOrderPlugin()
   ])
+
+  if(process.env.NODE_ENV === 'analyzer') {
+    module.exports.plugins = (module.exports.plugins || []).concat([
+      new BundleAnalyzerPlugin()
+    ])
+  }
 }
