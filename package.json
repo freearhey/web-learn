@@ -50,7 +50,7 @@
     "sass-loader": "^7.3.1",
     "style-loader": "^0.13.2",
     "vue": "^2.6.10",
-    "vue-head": "^2.0.12",
+    "vue-head": "^2.1.2",
     "vue-infinite-scroll": "^2.0.2",
     "vue-loader": "^15.7.1",
     "vue-progressbar": "^0.7.5",
