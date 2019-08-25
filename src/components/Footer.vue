@@ -6,7 +6,7 @@
         p.social-buttons
           span(v-for="link in app.links",v-html="link")
         p
-          a.icon(:href="'https://github.com/' + app.github.repo",target="_blank",rel="noopener noreferrer")
+          a.icon(:href="'https://github.com/' + app.github.repo",target="_blank",rel="noopener noreferrer",aria-label="GitHub")
             i.ion-social-github
 </template>
 
