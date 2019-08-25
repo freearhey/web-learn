@@ -10,7 +10,7 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: '/build/',
+    publicPath: '/web-learn/build/',
     filename: 'bundle.js'
   },
   devtool: 'inline-source-map',
