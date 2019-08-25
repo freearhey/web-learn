@@ -14,8 +14,11 @@
 
 <script>
 import numeral from 'numeral'
-import moment from 'moment'
-import 'moment-duration-format'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import ytDurationFormat from 'youtube-duration-format'
+
+dayjs.extend(relativeTime)
 
 export default {
   props: {
@@ -29,10 +32,10 @@ export default {
       return numeral(this.video.viewCount).format('0a') + ' views'
     },
     publishedAt() {
-      return moment(this.video.publishedAt).fromNow()
+      return dayjs(this.video.publishedAt).fromNow()
     },
     duration() {
-      return moment.duration(this.video.duration).format('h:mm:ss')
+      return ytDurationFormat(this.video.duration)
     }
   }
 }

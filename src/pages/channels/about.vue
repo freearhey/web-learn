@@ -12,7 +12,7 @@ section.section
 
 <script>
 import numeral from 'numeral'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import store from '~store'
 
 export default {
@@ -29,7 +29,7 @@ export default {
       return numeral(this.channel.viewCount).format('0,0')
     },
     publishedAt() {
-      return moment(this.channel.publishedAt).format('MMM D, YYYY')
+      return dayjs(this.channel.publishedAt).format('MMM D, YYYY')
     }
   },
   created() {
