@@ -35,7 +35,8 @@ export default {
     return {
       channel: null,
       params: {
-        title: ''
+        title: '',
+        description: ''
       }
     }
   },
@@ -64,6 +65,7 @@ export default {
     loadChannel() {
       store.fetchChannel(this.$route.params.id).then(channel => {
         this.params.title = channel.title
+        this.params.description = `${channel.title} videos`
         this.channel = channel
         this.$emit('updateHead')
       }).catch(() => {
@@ -78,6 +80,11 @@ export default {
         separator: '-',
         complement: config.app.name
       }
+    },
+    meta() {
+      return [
+        { id: 'description', name: 'description', content: this.params.description }
+      ]
     }
   }
 }
