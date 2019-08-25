@@ -1,7 +1,7 @@
 <template lang="pug">
 .control
   span.select
-    select(v-model="selected",:class="{ 'is-disabled': disabled }")
+    select(v-model="selected",:class="{ 'is-disabled': disabled }",:aria-label="ariaLabel")
       option(v-if="placeholder",value="") {{ placeholder }}
       option(
         v-for="option in options",
@@ -15,7 +15,8 @@ export default {
     options: Array,
     disabled: Boolean,
     placeholder: String,
-    default: String
+    default: String,
+    ariaLabel: String
   },
   data() {
     return {
