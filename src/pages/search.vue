@@ -79,6 +79,11 @@ export default {
         separator: '-',
         complement: config.app.name
       }
+    },
+    meta() {
+      return [
+        { id: 'description', name: 'description', content: 'Site search' }
+      ]
     }
   },
   created() {
