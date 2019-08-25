@@ -24,7 +24,7 @@ export default {
     },
     meta() {
       return [
-        { name: 'description', content: config.app.description }
+        { id: 'description', name: 'description', content: config.app.description }
       ]
     }
   },
