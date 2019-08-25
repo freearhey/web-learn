@@ -8,8 +8,8 @@ section.section(v-infinite-scroll="loadMore",infinite-scroll-disabled="loading")
 <script>
 import store from '~store'
 import util from '~util'
-import VideoList from '~components/VideoList.vue'
-import Spinner from '~components/Spinner.vue'
+const VideoList = () => import(/* webpackChunkName: "video-list" */ '~components/VideoList.vue')
+const Spinner = () => import(/* webpackChunkName: "spinner" */ '~components/Spinner.vue')
 
 export default {
   components: {

@@ -7,8 +7,8 @@ main
 
 <script>
 import config from '~config'
-import recommendedVideos from '~pages/videos/recommended.vue'
-import popularVideos from '~pages/videos/popular.vue'
+const recommendedVideos = () => import(/* webpackChunkName: "recommended-videos" */ '~pages/videos/recommended.vue')
+const popularVideos = () => import(/* webpackChunkName: "popular-videos" */ '~pages/videos/popular.vue')
 
 export default {
   components: {

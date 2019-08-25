@@ -41,11 +41,11 @@ import numeral from 'numeral'
 import nl2br from 'nl2br'
 import linkifyjs from 'linkifyjs/html'
 import truncate from 'lodash.truncate'
-import Player from '~components/Player.vue'
-import ChannelRecentVideos from '~widgets/ChannelRecentVideos.vue'
-import TopicRelatedVideos from '~widgets/TopicRelatedVideos.vue'
 import store from '~store'
 import config from '~config'
+const Player = () => import(/* webpackChunkName: "player" */ '~components/Player.vue')
+const ChannelRecentVideos = () => import(/* webpackChunkName: "channel-recent-videos" */ '~widgets/ChannelRecentVideos.vue')
+const TopicRelatedVideos = () => import(/* webpackChunkName: "topic-related-videos" */ '~widgets/TopicRelatedVideos.vue')
 
 export default {
   components: { Player, ChannelRecentVideos, TopicRelatedVideos },

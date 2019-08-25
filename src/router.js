@@ -1,30 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+const Index = () => import(/* webpackChunkName: "index" */ '~pages/index.vue')
+const SingleVideo = () => import(/* webpackChunkName: "single-video" */ '~pages/videos/single.vue')
+const Search = () => import(/* webpackChunkName: "search" */ '~pages/search.vue')
+const Topics = () => import(/* webpackChunkName: "topics" */ '~pages/topics/index.vue')
+const SingleTopic = () => import(/* webpackChunkName: "single-topic" */ '~pages/topics/single.vue')
+const TopicVideos = () => import(/* webpackChunkName: "topic-videos" */ '~pages/topics/videos.vue')
+const SingleChannel = () => import(/* webpackChunkName: "single-channel" */ '~pages/channels/single.vue')
+const ChannelAbout = () => import(/* webpackChunkName: "channel-about" */ '~pages/channels/about.vue')
+const ChannelVideos = () => import(/* webpackChunkName: "channel-videos" */ '~pages/channels/videos.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: require('~pages/index.vue').default, meta: { scrollTop: true } },
-  { path: '/video/:id', name: 'video', component: require('~pages/videos/single.vue').default, meta: { scrollTop: true } },
-  { path: '/search*', name: 'search', component: require('~pages/search.vue').default, meta: { scrollTop: true } },
-  { path: '/topics', name: 'topics', component: require('~pages/topics/index.vue').default, meta: { scrollTop: true } },
+  { path: '/', component: Index, meta: { scrollTop: true } },
+  { path: '/video/:id', name: 'video', component: SingleVideo, meta: { scrollTop: true } },
+  { path: '/search*', name: 'search', component: Search, meta: { scrollTop: true } },
+  { path: '/topics', name: 'topics', component: Topics, meta: { scrollTop: true } },
   {
     path: '/topic/:id',
     name: 'topic',
-    component: require('~pages/topics/single.vue').default,
+    component: SingleTopic,
     meta: { scrollTop: true },
     redirect: { name: 'topic-popular-videos' },
     children: [
       {
         path: 'recent',
         name: 'topic-recent-videos',
-        component: require('~pages/topics/videos.vue').default,
+        component: TopicVideos,
         meta: { scrollTop: false, order: 'date' }
       },
       {
         path: 'popular',
         name: 'topic-popular-videos',
-        component: require('~pages/topics/videos.vue').default,
+        component: TopicVideos,
         meta: { scrollTop: false, order: 'viewCount' }
       }
     ]
@@ -32,20 +41,20 @@ const routes = [
   {
     path: '/channel/:id',
     name: 'channel',
-    component: require('~pages/channels/single.vue').default,
+    component: SingleChannel,
     meta: { scrollTop: true },
     redirect: { name: 'channel-recent-videos' },
     children: [
       {
         path: 'about',
         name: 'channel-about',
-        component: require('~pages/channels/about.vue').default,
+        component: ChannelAbout,
         meta: { scrollTop: false }
       },
       {
         path: 'uploads',
         name: 'channel-recent-videos',
-        component: require('~pages/channels/videos.vue').default,
+        component: ChannelVideos,
         meta: { scrollTop: false, order: 'date' }
       }
     ]

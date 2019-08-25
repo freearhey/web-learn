@@ -9,7 +9,7 @@ section.section
 import store from '~store'
 import util from '~util'
 import filters from '~api/filters'
-import VideoList from '~components/VideoList.vue'
+const VideoList = () => import(/* webpackChunkName: "video-list" */ '~components/VideoList.vue')
 
 export default {
   components: {
