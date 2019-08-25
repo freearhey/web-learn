@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 
 export default [
   {
@@ -7,18 +7,18 @@ export default [
   },
   {
     title: 'Today',
-    value: moment().subtract(1, 'days').toISOString()
+    value: dayjs().subtract(1, 'days').toISOString()
   },
   {
     title: 'This Week',
-    value: moment().subtract(7, 'days').toISOString()
+    value: dayjs().subtract(7, 'days').toISOString()
   },
   {
     title: 'This Month',
-    value: moment().subtract(30, 'days').toISOString()
+    value: dayjs().subtract(30, 'days').toISOString()
   },
   {
     title: 'This Year',
-    value: moment().subtract(365, 'days').toISOString()
+    value: dayjs().subtract(365, 'days').toISOString()
   }
 ]
