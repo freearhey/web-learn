@@ -31,7 +31,8 @@ export default {
     return {
       topic: null,
       params: {
-        title: ''
+        title: '',
+        description: ''
       }
     }
   },
@@ -48,6 +49,7 @@ export default {
     loadTopic() {
       store.fetchTopic(this.$route.params.id).then(topic => {
         this.params.title = topic.title
+        this.params.description = `Videos is dedicated to ${topic.title}`
         this.topic = topic
         this.$emit('updateHead')
       })
@@ -60,6 +62,11 @@ export default {
         separator: '-',
         complement: config.app.name
       }
+    },
+    meta() {
+      return [
+        { id: 'description', name: 'description', content: this.params.description }
+      ]
     }
   }
 }
