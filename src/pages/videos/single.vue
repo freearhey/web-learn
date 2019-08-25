@@ -36,16 +36,16 @@ main
 </template>
 
 <script>
-import moment from 'moment'
+import dayjs from 'dayjs'
 import numeral from 'numeral'
 import nl2br from 'nl2br'
 import linkifyjs from 'linkifyjs/html'
 import truncate from 'lodash.truncate'
 import store from '~store'
 import config from '~config'
-const Player = () => import(/* webpackChunkName: "player" */ '~components/Player.vue')
-const ChannelRecentVideos = () => import(/* webpackChunkName: "channel-recent-videos" */ '~widgets/ChannelRecentVideos.vue')
-const TopicRelatedVideos = () => import(/* webpackChunkName: "topic-related-videos" */ '~widgets/TopicRelatedVideos.vue')
+import Player from '~components/Player.vue'
+import ChannelRecentVideos from '~widgets/ChannelRecentVideos.vue'
+import TopicRelatedVideos from '~widgets/TopicRelatedVideos.vue'
 
 export default {
   components: { Player, ChannelRecentVideos, TopicRelatedVideos },
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     publishedAt() {
-      return 'Published on ' + moment(this.video.publishedAt).format('MMM D, YYYY')
+      return 'Published on ' + dayjs(this.video.publishedAt).format('MMM D, YYYY')
     },
     viewCount() {
       return numeral(this.video.viewCount).format('0,0') + ' views'
