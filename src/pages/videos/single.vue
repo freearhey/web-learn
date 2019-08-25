@@ -117,7 +117,7 @@ export default {
     },
     meta() {
       return [
-        { name: 'description', content: this.params.description }
+        { id: 'description', name: 'description', content: this.params.description }
       ]
     }
   }
