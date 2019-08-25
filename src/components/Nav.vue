@@ -47,7 +47,7 @@ export default {
     font-weight: 500
 
 .nav-title
-  color: #bbb
+  color: #757575
   font-weight: 700
   text-transform: uppercase
   line-height: 1
