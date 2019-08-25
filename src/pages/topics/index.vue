@@ -10,7 +10,8 @@ main
             v-select(
               @option-selected="changeOrder",
               :options="orderOptions",
-              :default="order"
+              :default="order",
+              aria-label="order"
             )
       topic-list(:topics="topics")
 </template>
@@ -40,6 +41,11 @@ export default {
         separator: '-',
         complement: config.app.name
       }
+    },
+    meta() {
+      return [
+        { id: 'description', name: 'description', content: 'List of available topics' }
+      ]
     }
   },
   created() {
