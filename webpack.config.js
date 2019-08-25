@@ -5,12 +5,14 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
+const ASSET_PATH = process.env.ASSET_PATH || '/build/'
+
 module.exports = {
   entry: './src/main.js',
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: '/web-learn/build/',
+    publicPath: ASSET_PATH,
     filename: 'bundle.js'
   },
   devtool: 'inline-source-map',
