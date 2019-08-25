@@ -3,7 +3,6 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 const ASSET_PATH = process.env.ASSET_PATH || '/build/'
 
@@ -89,7 +88,6 @@ module.exports = {
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'analyzer') {
   module.exports.mode = 'production'
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new MomentLocalesPlugin(),
     new CopyWebpackPlugin([
       { from: 'src/static' }
     ]),
