@@ -18,8 +18,8 @@ main
 <script>
 import store from '~store'
 import config from '~config'
-const TopicList = () => import(/* webpackChunkName: "topic-list" */ '~components/TopicList.vue')
-const vSelect = () => import(/* webpackChunkName: "select" */ '~components/Select.vue')
+import TopicList from '~components/TopicList.vue'
+import vSelect from '~components/Select.vue'
 
 export default {
   components: { TopicList, vSelect },

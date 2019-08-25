@@ -37,9 +37,9 @@
 import filters from '~api/filters'
 import store from '~store'
 import config from '~config'
-const vSelect = () => import(/* webpackChunkName: "select" */ '~components/Select.vue')
-const Spinner = () => import(/* webpackChunkName: "spinner" */ '~components/Spinner.vue')
-const VideoList = () => import(/* webpackChunkName: "video-list" */ '~components/VideoList.vue')
+import vSelect from '~components/Select.vue'
+import Spinner from '~components/Spinner.vue'
+import VideoList from '~components/VideoList.vue'
 
 export default {
   components: { vSelect, VideoList, Spinner },

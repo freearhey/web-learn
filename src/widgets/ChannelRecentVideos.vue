@@ -10,7 +10,7 @@ section.section.is-paddingless(v-if="channel && videos.length")
 <script>
 import store from '~store'
 import filters from '~api/filters'
-const VideoList = () => import(/* webpackChunkName: "video-list" */ '~components/VideoList.vue')
+import VideoList from '~components/VideoList.vue'
 
 export default {
   components: {

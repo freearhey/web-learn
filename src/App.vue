@@ -10,10 +10,10 @@
 </template>
 
 <script>
-const Header = () => import(/* webpackChunkName: "header" */ '~components/Header.vue')
-const Footer = () => import(/* webpackChunkName: "footer" */ '~components/Footer.vue')
-const Nav = () => import(/* webpackChunkName: "nav" */ '~components/Nav.vue')
-const Alert = () => import(/* webpackChunkName: "alert" */ '~components/Alert.vue')
+import Header from '~components/Header.vue'
+import Footer from '~components/Footer.vue'
+import Nav from '~components/Nav.vue'
+import Alert from '~components/Alert.vue'
 import events from '~events'
 import config from '~config'
 
