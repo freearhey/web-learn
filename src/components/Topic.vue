@@ -11,7 +11,7 @@ div
             .media-left
               .image.logo
                 span.logo__wrapper
-                img(:src="topic.logo")
+                img(:src="topic.logo",:alt="topic.title + ' Logo'")
             .media-content
               .content
                 .title.is-5 #[strong {{ topic.title }}]

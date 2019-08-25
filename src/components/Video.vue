@@ -2,7 +2,7 @@
 .video
   router-link.card-image(:to="{ name: 'video', params: { id: video.id } }")
     figure.image.is-16by9
-      img(:src="video.thumbnails.medium.url")
+      img(:src="video.thumbnails.medium.url",:alt="video.title")
       .video__duration {{ duration }}
   .video__body
     .media

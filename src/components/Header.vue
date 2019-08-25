@@ -3,8 +3,8 @@ header.nav.header
   .container
     .nav-left
       router-link(to="/").logo.nav-item.is-brand
-        img.is-hidden-mobile(:src="app.logo.normal",:alt="app.name")
-        img.is-hidden-tablet(:src="app.logo.mini",:alt="app.name")
+        img.is-hidden-mobile(:src="app.logo.normal",:alt="app.name + ' logo'")
+        img.is-hidden-tablet(:src="app.logo.mini",:alt="app.name + ' logo'")
       search.nav-item
     .nav-right.is-hidden-mobile
       .nav-item.social-buttons

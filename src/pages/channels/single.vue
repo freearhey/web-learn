@@ -9,7 +9,7 @@ main
           .media-left
             .image.logo
               span.logo__wrapper
-              img(:src="channel.thumbnails.medium.url")
+              img(:src="channel.thumbnails.medium.url",:alt="channel.title + ' channel logo'")
           .media-content
             .content
               .title.is-3

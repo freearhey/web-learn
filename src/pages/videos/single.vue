@@ -9,7 +9,7 @@ main
       .media
         .media-left
           figure.image.is-48x48(v-if="video.channel")
-            img.is-circle(:src="video.channel.thumbnails.default.url")
+            img.is-circle(:src="video.channel.thumbnails.default.url",:alt="video.channelTitle + ' channel logo'")
         .media-content
           .content
             h2.title.is-5: strong {{ video.title }}

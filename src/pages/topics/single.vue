@@ -9,7 +9,7 @@ main
           .media-left
             .image.logo
               span.logo__wrapper
-              img(:src="topic.logo")
+              img(:src="topic.logo",:alt="topic.title + ' logo'")
           .media-content
             .content
               .title.is-3.topic-title #[strong {{ topic.title }}]
