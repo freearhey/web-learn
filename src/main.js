@@ -7,6 +7,8 @@ import VueProgressBar from 'vue-progressbar'
 import VueInfiniteScroll from 'vue-infinite-scroll'
 import VueHead from 'vue-head'
 
+Vue.config.ignoredElements = ['ion-icon']
+
 Vue.use(VueHead)
 Vue.use(VueFilters)
 Vue.use(VueInfiniteScroll)

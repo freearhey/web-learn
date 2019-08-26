@@ -10,11 +10,11 @@ header.nav.header
       .nav-item.social-buttons
         a.button(:href="'https://github.com/' + app.github.repo", target="_blank", rel="noopener noreferrer")
           span.icon
-            i.ion-social-github
+            ion-icon(name="logo-github")
           span GitHub
         a.button(:href="'https://twitter.com/intent/tweet?text=' + app.twitter.tweet + '&url=' + app.url + '&via=' + app.twitter.username", target="_blank", rel="noopener noreferrer")
           span.icon
-            i.ion-social-twitter
+            ion-icon(name="logo-twitter")
           span Tweet
 </template>
 
@@ -52,4 +52,9 @@ export default {
   margin-right: 6px
   .button
     color: #4a4a4a
+  ion-icon
+    height: 24px
+    font-size: 22px
+    display: flex
+    align-items: center
 </style>

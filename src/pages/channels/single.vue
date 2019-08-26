@@ -12,12 +12,12 @@ main
               img(:src="channel.thumbnails.medium.url",:alt="channel.title + ' channel logo'")
           .media-content
             .content
-              .title.is-3
+              .title.is-3.channel-title
                 strong {{ channel.title }}
                 = ' '
                 a.ext-link(:href="channelLink",target="_blank",rel="noopener noreferrer")
                   span.icon
-                    i.ion-link
+                    ion-icon(name="link")
     nav.nav.has-underline
       .container
         .nav-center
@@ -136,6 +136,10 @@ $tablet: 769px
   @media (min-width: $tablet)
     margin-right: 30px
 
+.channel-title
+  display: inline-flex
+  align-items: center
+
 .ext-link
   border-bottom: none !important
   display: inline-flex
@@ -143,4 +147,5 @@ $tablet: 769px
     color: #bbbbbb
     font-weight: 600
     font-size: 24px
+    margin-left: 10px
 </style>

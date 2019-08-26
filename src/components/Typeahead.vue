@@ -13,7 +13,8 @@
       @keyup="update",
       aria-label="search"
     )
-    i.fa.ion-ios-search-strong
+    i.fa
+      ion-icon(name="search")
   .Typeahead__list.panel(v-if="hasItems && show")
     a.Typeahead__list-item(
       v-for="(item, index) in items",
