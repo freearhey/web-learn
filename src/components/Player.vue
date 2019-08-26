@@ -1,7 +1,7 @@
 <template lang="pug">
 .player(:style="style")
   .player__wrapper
-    iframe(:src="src",frameborder="0",allowfullscreen)
+    iframe(:src="src",frameborder="0",allowfullscreen,title="YouTube Player")
 </template>
 
 <script>
