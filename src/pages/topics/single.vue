@@ -17,8 +17,8 @@ main
     nav.nav.has-underline
       .container
         .nav-center
-          router-link.nav-item.is-tab.nav-tab(:to="{ name: 'topic-popular-videos' }") Popular
-          router-link.nav-item.is-tab.nav-tab(:to="{ name: 'topic-recent-videos' }") Recent
+          router-link.nav-item.is-tab(:to="{ name: 'topic-popular-videos' }") Popular
+          router-link.nav-item.is-tab(:to="{ name: 'topic-recent-videos' }") Recent
     router-view
 </template>
 
@@ -129,12 +129,4 @@ $link-color: #595959
   margin-right: 20px
   @media (min-width: $tablet)
     margin-right: 30px
-
-.nav-tab
-  color: #595959 !important
-  &.is-active
-    color: #054ECC !important
-    font-weight: 600
-    border-bottom: 2px solid #1A6CF9 !important
-    border-top: 2px solid transparent !important
 </style>
