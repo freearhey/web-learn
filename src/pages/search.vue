@@ -10,21 +10,24 @@
               v-select(
                 @option-selected="changeOrder",
                 :options="orderOptions",
-                :default="order"
+                :default="order",
+                aria-label="order"
               )
               v-select(
                 @option-selected="changeTimeframe",
                 :options="timeframeOptions",
-                :default="timeframe"
+                :default="timeframe",
+                aria-label="timeframe"
               )
               .tooltip
                 v-select(
                   @option-selected="changeLanguage",
                   :options="languageOptions",
                   disabled,
-                  placeholder="Language"
+                  placeholder="Language",
+                  aria-label="language"
                 )
-                span.tooltip-text Not work only because YouTube API #[a(href="https://code.google.com/p/gdata-issues/issues/detail?id=4110&q=relevanceLanguage&colspec=API%20ID%20Type%20Status%20Priority%20Stars%20Summary",target="_blank") issue]
+                span.tooltip-text Not work only because YouTube API #[a(href="https://code.google.com/p/gdata-issues/issues/detail?id=4110&q=relevanceLanguage&colspec=API%20ID%20Type%20Status%20Priority%20Stars%20Summary",target="_blank",rel="noopener") issue]
         video-list(:videos="results")
         spinner(:show="loading")
         .no-results(v-show="noResults") 
