@@ -14,7 +14,8 @@ main
           .content
             h2.title.is-5: strong {{ video.title }}
             p.subtitle.is-6 
-              router-link(:to="{ name: 'channel', params: { id: video.channelId } }") {{ video.channelTitle }} 
+              router-link(:to="{ name: 'channel', params: { id: video.channelId } }") {{ video.channelTitle }}
+              = ' '
               | * {{ publishedAt }}
         .media-right
           span {{ viewCount }}
@@ -68,7 +69,11 @@ export default {
       return numeral(this.video.viewCount).format('0,0') + ' views'
     },
     description() {
-      return nl2br(linkifyjs(this.video.description, false))
+      return nl2br(linkifyjs(this.video.description, {
+        attributes: {
+          rel: 'noopener'
+        }
+      }))
     }
   },
   created() {
