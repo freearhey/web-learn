@@ -133,7 +133,7 @@ $link-color: #595959
 .nav-tab
   color: #595959
   &.is-active
-    color: #0F6BFF
+    color: #054ECC
     font-weight: 600
     border-bottom: 2px solid #4a8bfa !important
     border-top: 2px solid transparent !important
