@@ -5,7 +5,11 @@ export default function(channel) {
   return {
     id: channel.id,
     title: channel.snippet.title,
-    description: nl2br(linkifyjs(channel.snippet.description, false)),
+    description: nl2br(linkifyjs(channel.snippet.description, {
+        attributes: {
+          rel: 'noopener'
+        }
+      })),
     thumbnails: channel.snippet.thumbnails,
     publishedAt: channel.snippet.publishedAt,
     viewCount: parseInt(channel.statistics.viewCount),
