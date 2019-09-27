@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-	<g>
-		<polygon fill="#10AC60" points="0 127.944121 128 1.71602774e-14 256 127.944121 128 256"></polygon>
-		<polygon fill="#5FBE85" points="256 128 128 256 0 128"></polygon>
-		<circle fill="#F9F6EE" cx="128" cy="128.5" r="64.5"></circle>
-		<circle fill="#E1B324" cx="128" cy="128.5" r="43.4984264"></circle>
-	</g>
-</svg>
+<svg height="256" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" width="256" xmlns="http://www.w3.org/2000/svg"><path d="m0 127.944121 128-127.944121 128 127.944121-128 128.055879z" fill="#10ac60"/><path d="m256 128-128 128-128-128z" fill="#5fbe85"/><circle cx="128" cy="128.5" fill="#f9f6ee" r="64.5"/><circle cx="128" cy="128.5" fill="#e1b324" r="43.498426"/></svg>

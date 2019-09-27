@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="301px" viewBox="0 0 256 301" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-    <defs>
-        <linearGradient x1="2.17771739%" y1="34.7938955%" x2="92.7221942%" y2="91.3419405%" id="linearGradient-1">
-            <stop stop-color="#41A7EF" offset="0%"></stop>
-            <stop stop-color="#813DDE" offset="54.2186236%"></stop>
-            <stop stop-color="#8F2EE2" offset="74.4988788%"></stop>
-            <stop stop-color="#A11CE6" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g>
-        <path d="M124.183681,101.699 C124.183681,66.515 136.256681,34.152 156.486681,8.525 C159.197681,5.092 156.787681,0.069 152.412681,0.012 C151.775681,0.004 151.136681,0 150.497681,0 C67.6206813,0 0.390681343,66.99 0.00168134279,149.775 C-0.386318657,232.369 66.4286813,300.195 149.019681,300.988 C189.884681,301.381 227.036681,285.484 254.376681,259.395 C257.519681,256.396 255.841681,251.082 251.548681,250.42 C179.413681,239.291 124.183681,176.949 124.183681,101.699" fill="url(#linearGradient-1)"></path>
-    </g>
-</svg>
+<svg height="301" preserveAspectRatio="xMidYMid" viewBox="0 0 256 301" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" x1="2.177717%" x2="92.722194%" y1="34.793896%" y2="91.341941%"><stop offset="0" stop-color="#41a7ef"/><stop offset=".542186236" stop-color="#813dde"/><stop offset=".744988788" stop-color="#8f2ee2"/><stop offset="1" stop-color="#a11ce6"/></linearGradient><path d="m124.183681 101.699c0-35.184 12.073-67.547 32.303-93.174 2.711-3.433.301-8.456-4.074-8.513-.637-.008-1.276-.012-1.915-.012-82.8769997 0-150.10699966 66.99-150.49599966 149.775-.388 82.594 66.42699996 150.42 149.01799966 151.213 40.865.393 78.017-15.504 105.357-41.593 3.143-2.999 1.465-8.313-2.828-8.975-72.135-11.129-127.365-73.471-127.365-148.721" fill="url(#a)"/></svg>
