@@ -10,12 +10,12 @@
   "bugs": {
     "url": "https://github.com/freearhey/web-learn/issues"
   },
-  "author": "Arhey <free.arhey@gmail.com>",
+  "author": "Arhey",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production ASSET_PATH=/web-learn/build/ webpack --progress --hide-modules",
-    "analyzer": "cross-env NODE_ENV=analyzer webpack --progress --hide-modules"
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack --mode production --progress --hide-modules",
+    "analyzer": "webpack --progress --hide-modules --env.analyze"
   },
   "dependencies": {},
   "devDependencies": {
@@ -26,13 +26,10 @@
     "babel-loader": "^8.0.0",
     "bulma": "^0.2.3",
     "copy-webpack-plugin": "^4.6.0",
-    "cross-env": "^3.2.4",
     "css-loader": "^3.2.0",
     "dayjs": "^1.8.15",
     "debounce": "^1.2.0",
-    "eslint": "^5.8.0",
-    "eslint-config-vue": "^2.0.2",
-    "eslint-plugin-vue": "^1.0.0",
+    "dotenv": "^8.1.0",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.7",
     "jsonp": "^0.2.1",
