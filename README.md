@@ -1,8 +1,8 @@
-# [Web Learn](https://freearhey.github.io/web-learn/)
+# [Web Learn](https://web-learn.netlify.com/)
 
 Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.
 
-[![Web Learn](static/images/banner.png)](https://freearhey.github.io/web-learn/)
+[![Web Learn](static/images/banner.png)](https://web-learn.netlify.com/)
 
 ## Development
 

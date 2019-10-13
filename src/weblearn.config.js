@@ -6,7 +6,7 @@ const tweet = encodeURIComponent(title)
 export default {
   app: {
     name: 'Web Learn',
-    url: 'https://freearhey.github.io/web-learn/',
+    url: 'https://web-learn.netlify.com/',
     title: title,
     description: 'Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.',
     author: 'Arhey',
