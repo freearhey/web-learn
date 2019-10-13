@@ -71,7 +71,6 @@ export default {
     },
     update(e) {
       if(e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode == 8 || e.keyCode == 32) {
-        console.log(this.query)
         this.show = true
         this.$emit('type', this.query)
       }
@@ -95,11 +94,6 @@ export default {
     reset() {
       this.show = false
       this.current = -1
-    }
-  },
-  watch: {
-    selected(val) {
-      // console.log(val)
     }
   },
   created() {
