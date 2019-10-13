@@ -32,7 +32,7 @@
         spinner(:show="loading")
         .no-results(v-show="noResults") 
           router-link(to="/") 
-            img(:src="logo.mini",:alt="appName + ' logo'")
+            img(:src="logo",:alt="appName + ' logo'")
           span No results.
 </template>
 
@@ -69,7 +69,7 @@ export default {
       return this.$route.query.q
     },
     logo() {
-      return config.app.logo
+      return config.app.brand.logoMini
     },
     appName() {
       return config.app.name

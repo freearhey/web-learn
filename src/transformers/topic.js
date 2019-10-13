@@ -4,7 +4,7 @@ export default function(topic) {
     title: topic.title,
     score: topic.score,
     site: topic.site || null,
-    logo: './src/topics/icons/$1.svg'.replace(/\$1/, topic.id),
+    logo: 'static/logos/$1.svg'.replace(/\$1/, topic.id),
     color: topic.color
   }
 }

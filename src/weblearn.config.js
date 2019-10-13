@@ -1,6 +1,5 @@
-const env = (process.env.NODE_ENV === 'production') ? require('../.env.production') : require('../.env.local')
 const baseUri = 'https://www.googleapis.com/youtube/v3'
-const apiKey = env.YOUTUBE_API_KEY
+const apiKey = process.env.YOUTUBE_API_KEY
 const title = 'Web Learn: it\'s like YouTube Gaming, but for Web Developers'
 const tweet = encodeURIComponent(title)
 
@@ -11,10 +10,10 @@ export default {
     title: title,
     description: 'Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.',
     author: 'Arhey',
-    logo: {
-      normal: 'build/images/logo.svg',
-      mini: 'build/images/logo-mini.svg',
-      share: 'build/images/weblearn-banner.png'
+    brand: {
+      logo: 'static/images/logo.svg',
+      logoMini: 'static/images/logo-mini.svg',
+      banner: 'static/images/banner.png'
     },
     github: {
       username: 'freearhey',
