@@ -39,11 +39,13 @@ npm run dev
 and open the site in a browser. Usually the server starts at `http://localhost:8080`.
 
 ## Contributing
+
 If you find a bug or want to contribute to the code or documentation, you can help by submitting an [issue](https://github.com/freearhey/web-learn/issues) or a [pull request](https://github.com/freearhey/web-learn/pulls).
 
-For example, if you want to add new topic to the site you only need to create a Yaml file inside the [topics](https://github.com/freearhey/web-learn/tree/master/src/topics) folder with its description
+For example, if you want to add new topic to the site you only need to create a Yaml file inside the [topics](https://github.com/freearhey/web-learn/tree/master/src/topics) folder with its description:
 
 #### nodejs.yml
+
 ```yml
 id: nodejs # topic id
 title: Node.js # full title of the topic
@@ -52,6 +54,6 @@ color: '#539e43' # usually the main color of the logo
 site: http://nodejs.org # official site (optional)
 ```
 
-## Copyright and license
+## License
 
-Code copyright 2018 Aleksandr Statciuk. Code released under [the MIT license](https://github.com/freearhey/web-learn/blob/master/LICENSE).
+[MIT](https://github.com/freearhey/web-learn/blob/master/LICENSE)
