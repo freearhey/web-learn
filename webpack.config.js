@@ -87,10 +87,8 @@ module.exports = env => {
     }
   }
 
-  if(env && env.analyze) {
-    config.plugins = (config.plugins || []).concat([
-      new BundleAnalyzerPlugin()
-    ])
+  if (env && env.analyze) {
+    config.plugins = (config.plugins || []).concat([new BundleAnalyzerPlugin()])
   }
 
   return config
