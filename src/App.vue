@@ -32,10 +32,10 @@ export default {
     'v-header': Header,
     'v-nav': Nav,
     'v-footer': Footer,
-    'alert': Alert
+    alert: Alert
   },
   created() {
-    events.$on('api.error', (err) => {
+    events.$on('api.error', err => {
       this.errors.push(err.name + ': ' + err.message)
     })
   },
@@ -43,8 +43,6 @@ export default {
     meta() {
       return [
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:creator', content: '@' + this.app.twitter.username },
-        { name: 'twitter:site', content: '@' + this.app.twitter.username },
         { name: 'twitter:title', content: this.app.title },
         { name: 'twitter:description', content: this.app.description },
         { name: 'twitter:image', content: this.app.url + this.app.brand.banner },

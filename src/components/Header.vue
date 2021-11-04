@@ -12,7 +12,7 @@ header.nav.header
           span.icon
             ion-icon(name="logo-github")
           span GitHub
-        a.button(:href="'https://twitter.com/intent/tweet?text=' + app.twitter.tweet + '&url=' + app.url + '&via=' + app.twitter.username", target="_blank", rel="noopener noreferrer")
+        a.button(:href="'https://twitter.com/intent/tweet?text=' + app.twitter.tweet + '&url=' + app.url", target="_blank", rel="noopener noreferrer")
           span.icon
             ion-icon(name="logo-twitter")
           span Tweet
