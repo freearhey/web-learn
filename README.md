@@ -1,4 +1,4 @@
-# [Web Learn](https://web-learn.netlify.com/)
+# [Web Learn](https://web-learn.netlify.app/)
 
 Web Learn is an open source service which provides simple access to thousands of video lessons on web developing and programming.
 
